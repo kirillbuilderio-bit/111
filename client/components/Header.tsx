@@ -1,10 +1,26 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Search, User } from "lucide-react";
-import { Link } from "react-router-dom";
+import { User } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
 
 export default function Header() {
+  const location = useLocation();
+
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname.startsWith(path);
+  };
+
+  const getLinkClassName = (path: string) => {
+    const baseClasses =
+      "transition-all duration-200 font-medium px-3 py-2 rounded-md relative";
+    return isActive(path)
+      ? `${baseClasses} text-gaming-accent bg-gaming-accent/10 border-b-2 border-gaming-accent`
+      : `${baseClasses} text-gaming-text hover:text-gaming-accent hover:bg-gaming-card`;
+  };
+
   return (
     <header className="bg-gaming-bg border-b border-gaming-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,29 +37,25 @@ export default function Header() {
 
           {/* Navigation Menu */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link
-              to="/news"
-              className="text-gaming-accent font-medium border-b-2 border-gaming-accent"
-            >
+            <Link to="/" className={getLinkClassName("/")}>
+              Главная
+            </Link>
+            <Link to="/news" className={getLinkClassName("/news")}>
               Новости
             </Link>
-            <Link
-              to="/guides"
-              className="text-gaming-text hover:text-gaming-accent transition-colors font-medium"
-            >
+            <Link to="/guides" className={getLinkClassName("/guides")}>
               Гайды
             </Link>
-            <Link
-              to="/squad-calc"
+            <a
+              href="https://squadcalc.rgs-squad.ru"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gaming-text hover:text-gaming-accent transition-colors font-medium"
             >
               Squad Calc
-            </Link>
-            <Link
-              to="/equipment-ban"
-              className="text-gaming-text hover:text-gaming-accent transition-colors font-medium"
-            >
-              Оборудование бан
+            </a>
+            <Link to="/rules" className={getLinkClassName("/rules")}>
+              Правила
             </Link>
             <a
               href="https://discord.gg/HXne8JVJ"
@@ -57,16 +69,6 @@ export default function Header() {
 
           {/* Right Side Actions */}
           <div className="flex items-center space-x-4">
-            {/* Search */}
-            <div className="relative hidden sm:block">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gaming-text-muted w-4 h-4" />
-              <Input
-                type="search"
-                placeholder="Поиск"
-                className="pl-10 w-40 bg-gaming-card border-gaming-border text-gaming-text placeholder:text-gaming-text-muted"
-              />
-            </div>
-
             {/* VIP Button */}
             <Link to="/vip">
               <Button

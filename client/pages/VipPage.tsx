@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Check, Star, Shield, Zap, Users } from "lucide-react";
+import VipPaymentModal from "@/components/VipPaymentModal";
 
 const vipFeatures = [
   {
@@ -12,7 +14,7 @@ const vipFeatures = [
   {
     icon: <Shield className="w-6 h-6" />,
     title: "Защита от кика",
-    description: "Защита от автоматического отключения",
+    description: "Защит�� от автоматического отключения",
   },
   {
     icon: <Zap className="w-6 h-6" />,
@@ -57,6 +59,14 @@ const vipPlans = [
 ];
 
 export default function VipPage() {
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<typeof vipPlans[0] | null>(null);
+
+  const handleBuyVip = (plan: typeof vipPlans[0]) => {
+    setSelectedPlan(plan);
+    setIsPaymentModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-gaming-bg">
       <Header />
@@ -80,7 +90,7 @@ export default function VipPage() {
         <section className="py-16 bg-gaming-card">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gaming-text text-center mb-12">
-              Преимущества VIP статуса
+              Преимущества VIP ��татуса
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -171,6 +181,7 @@ export default function VipPage() {
                           : "bg-gaming-border hover:bg-gaming-accent hover:text-black text-gaming-text"
                       }`}
                       size="lg"
+                      onClick={() => handleBuyVip(plan)}
                     >
                       Купить VIP
                     </Button>
@@ -195,7 +206,7 @@ export default function VipPage() {
                 </h3>
                 <p className="text-gaming-text-muted">
                   VIP статус активируется автоматически после оплаты в течение
-                  5-10 минут. Вы получите уведомление в Discord о активации.
+                  5-10 минут. Вы получите у��едомление в Discord о активации.
                 </p>
               </div>
 
@@ -224,6 +235,12 @@ export default function VipPage() {
       </main>
 
       <Footer />
+
+      <VipPaymentModal
+        isOpen={isPaymentModalOpen}
+        onClose={() => setIsPaymentModalOpen(false)}
+        selectedPlan={selectedPlan}
+      />
     </div>
   );
 }

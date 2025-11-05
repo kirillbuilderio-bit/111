@@ -6,7 +6,6 @@ const footerSections = [
     title: "Интересное",
     links: [
       { label: "Пользователи", href: "/users" },
-      { label: "Статистика", href: "/statistics" },
       { label: "Новости", href: "/news" },
       { label: "Стать VIP", href: "/vip" },
     ],
@@ -14,9 +13,7 @@ const footerSections = [
   {
     title: "Новинки",
     links: [
-      { label: "Войны", href: "/wars" },
       { label: "Гайды", href: "/guides" },
-      { label: "Командиры", href: "/commanders" },
       { label: "Безопасность игр", href: "/security" },
     ],
   },
@@ -33,7 +30,6 @@ const footerSections = [
     title: "Игрения",
     links: [
       { label: "Ютуберы", href: "/youtubers" },
-      { label: "Командиры", href: "/commanders" },
       { label: "Модераторы", href: "/moderators" },
       { label: "Анализаторы", href: "/analytics" },
     ],

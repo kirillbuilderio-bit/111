@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1756040725368,
+    "steamId": "532",
+    "discordId": "",
+    "comment": "",
+    "plan": {
+      "name": "VIP 3 месяца",
+      "price": "799 ₽",
+      "duration": "90 дней",
+      "popular": true,
+      "discount": "Скидка 11%"
+    },
+    "paymentMethod": "sbp",
+    "screenshot": {
+      "filename": "vip-1756040725290.png",
+      "originalname": "logo 2.png",
+      "path": "uploads/vip-screenshots/vip-1756040725290.png",
+      "size": 97312
+    },
+    "status": "pending",
+    "createdAt": "2025-08-24T13:05:25.368Z"
+  },
+  {
+    "id": 1756040775166,
+    "steamId": "532",
+    "discordId": "",
+    "comment": "",
+    "plan": {
+      "name": "VIP 3 месяца",
+      "price": "799 ₽",
+      "duration": "90 дней",
+      "popular": true,
+      "discount": "Скидка 11%"
+    },
+    "paymentMethod": "sbp",
+    "screenshot": {
+      "filename": "vip-1756040775062.png",
+      "originalname": "logo 2.png",
+      "path": "uploads/vip-screenshots/vip-1756040775062.png",
+      "size": 97312
+    },
+    "status": "pending",
+    "createdAt": "2025-08-24T13:06:15.166Z"
+  },
+  {
+    "id": 1756080133217,
+    "steamId": "532",
+    "discordId": "",
+    "comment": "",
+    "plan": {
+      "name": "VIP 3 месяца",
+      "price": "799 ₽",
+      "duration": "90 дней",
+      "popular": true,
+      "discount": "Скидка 11%"
+    },
+    "paymentMethod": "sbp",
+    "screenshot": {
+      "filename": "vip-1756080131038.png",
+      "originalname": "logo 2.png",
+      "path": "uploads/vip-screenshots/vip-1756080131038.png",
+      "size": 97312
+    },
+    "status": "pending",
+    "createdAt": "2025-08-25T00:02:13.217Z"
+  },
+  {
+    "id": 1756080858640,
+    "steamId": "532",
+    "discordId": "1",
+    "comment": "1",
+    "plan": {
+      "name": "VIP 3 месяца",
+      "price": "799 ₽",
+      "duration": "90 дней",
+      "popular": true,
+      "discount": "Скидка 11%"
+    },
+    "paymentMethod": "tbank",
+    "screenshot": {
+      "filename": "vip-1756080852663.png",
+      "originalname": "logo 2.png",
+      "path": "uploads/vip-screenshots/vip-1756080852663.png",
+      "size": 97312
+    },
+    "status": "pending",
+    "createdAt": "2025-08-25T00:14:18.640Z"
+  }
+]

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const heroSlides = [
   {
@@ -22,7 +23,7 @@ const heroSlides = [
     title: "Командная игра",
     subtitle: "Тактические преимущества",
     description:
-      "Инструменты для координации команды и стратегического планирования",
+      "Инструменты для координации команды и страте��ического планирования",
     background: "bg-gradient-to-r from-green-900 via-green-800 to-green-900",
   },
 ];
@@ -70,19 +71,27 @@ export default function Hero() {
               {currentHero.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="bg-gaming-accent hover:bg-gaming-accent-hover text-black font-semibold px-8"
+              <Link to="/vip">
+                <Button
+                  size="lg"
+                  className="bg-gaming-accent hover:bg-gaming-accent-hover text-black font-semibold px-8"
+                >
+                  Получить VIP
+                </Button>
+              </Link>
+              <a
+                href="https://discord.gg/HXne8JVJ"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Получить VIP
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-black"
-              >
-                Узнать больше
-              </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-black"
+                >
+                  Присоединиться к Discord
+                </Button>
+              </a>
             </div>
           </div>
         </div>
